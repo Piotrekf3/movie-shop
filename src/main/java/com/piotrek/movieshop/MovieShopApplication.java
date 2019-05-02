@@ -34,7 +34,6 @@ public class MovieShopApplication {
     @Bean
     public DataSource dataSource() {
 
-        // create connection pool
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
 
         try {
@@ -44,12 +43,10 @@ public class MovieShopApplication {
             throw new RuntimeException(exc);
         }
 
-        // set database connection props
         dataSource.setJdbcUrl(env.getProperty("jdbc.url"));
         dataSource.setUser(env.getProperty("jdbc.user"));
         dataSource.setPassword(env.getProperty("jdbc.password"));
 
-        // set connection pool props
         dataSource.setInitialPoolSize(getIntProperty("connection.pool.initialPoolSize"));
         dataSource.setMinPoolSize(getIntProperty("connection.pool.minPoolSize"));
         dataSource.setMaxPoolSize(getIntProperty("connection.pool.maxPoolSize"));
@@ -60,7 +57,6 @@ public class MovieShopApplication {
 
     private Properties getHibernateProperties() {
 
-        // set hibernate properties
         Properties props = new Properties();
 
         props.setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));
@@ -69,15 +65,10 @@ public class MovieShopApplication {
         return props;
     }
 
-
-    // need a helper method
-    // read environment property and convert to int
-
     private int getIntProperty(String propName) {
 
         String propVal = env.getProperty(propName);
 
-        // now convert to int
         int intPropVal = Integer.parseInt(propVal);
 
         return intPropVal;
@@ -86,10 +77,8 @@ public class MovieShopApplication {
     @Bean
     public LocalSessionFactoryBean sessionFactory(){
 
-        // create session factorys
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 
-        // set the properties
         sessionFactory.setDataSource(dataSource());
         sessionFactory.setPackagesToScan(env.getProperty("hibernate.packagesToScan"));
         sessionFactory.setHibernateProperties(getHibernateProperties());
@@ -101,7 +90,6 @@ public class MovieShopApplication {
     @Autowired
     public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
 
-        // setup transaction manager based on session factory
         HibernateTransactionManager txManager = new HibernateTransactionManager();
         txManager.setSessionFactory(sessionFactory);
 
