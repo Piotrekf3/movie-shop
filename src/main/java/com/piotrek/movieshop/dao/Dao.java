@@ -1,4 +1,4 @@
-package com.piotrek.movieshop.com.piotrek.movieshop.dao;
+package com.piotrek.movieshop.dao;
 
 import java.util.Collection;
 

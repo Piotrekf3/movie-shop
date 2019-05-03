@@ -1,13 +1,14 @@
-package com.piotrek.movieshop.com.piotrek.movieshop.service;
+package com.piotrek.movieshop.service;
 
-import com.piotrek.movieshop.com.piotrek.movieshop.dao.Dao;
-import com.piotrek.movieshop.com.piotrek.movieshop.entity.Movie;
+import com.piotrek.movieshop.dao.Dao;
+import com.piotrek.movieshop.entity.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
-import java.util.List;
 
+@Service
 public class MovieService {
 
     @Autowired

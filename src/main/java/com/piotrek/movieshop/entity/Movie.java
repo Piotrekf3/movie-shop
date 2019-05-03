@@ -1,4 +1,4 @@
-package com.piotrek.movieshop.com.piotrek.movieshop.entity;
+package com.piotrek.movieshop.entity;
 
 import javax.persistence.*;
 
