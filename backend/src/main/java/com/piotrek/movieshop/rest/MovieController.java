@@ -3,15 +3,13 @@ package com.piotrek.movieshop.rest;
 import com.piotrek.movieshop.entity.Movie;
 import com.piotrek.movieshop.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 public class MovieController {
 
     @Autowired
