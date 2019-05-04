@@ -1,6 +1,12 @@
 <h2>Movies</h2>
 <ul class="movies">
   <li *ngFor="let movie of moviesList" >
-    <span class="badge">{{movie.id}}</span> {{movie.title}}
+      <span class="badge ">{{movie.id}}</span> 
+      <span class="content">{{movie.title}}</span> 
+      <span class="buy">
+        {{movie.price}}PLN
+        <mat-icon id="add-movie" (click)="addToCart(movie)">shopping_cart</mat-icon>
+      </span>
+      
   </li>
 </ul>

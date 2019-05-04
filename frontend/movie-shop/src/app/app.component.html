@@ -1,9 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
+<div class="conatiner">
+  <div class="row">
+    <div class="content col-sm-9">
+      <div style="text-align:center">
+        <h1>
+          Welcome to {{ title }}!
+        </h1>
+      </div>
 
-<app-movies-list></app-movies-list>
-<router-outlet></router-outlet>
+      <app-movies-list [shoppingCart]="shoppingCart"></app-movies-list>
+    </div>
+    <div class="footer col-sm-5">
+        <app-shopping-cart #shoppingCart></app-shopping-cart>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

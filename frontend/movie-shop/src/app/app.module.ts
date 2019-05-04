@@ -5,16 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { HttpClientModule }    from '@angular/common/http';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoviesListComponent
+    MoviesListComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot(),
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

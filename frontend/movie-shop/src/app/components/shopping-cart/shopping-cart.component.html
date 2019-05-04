@@ -1,0 +1,7 @@
+<h2>Shopping Cart</h2>
+<ol class="items">
+  <li *ngFor="let item of items" >
+     {{item.title}} {{item.price}}PLN
+     <mat-icon id="remove-item" (click)="removeItem(item)">clear</mat-icon>
+  </li>
+</ol>
