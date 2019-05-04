@@ -8,7 +8,8 @@ import { Movie } from '../../models/movie';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  items: Movie[] = [];
+  private items: Movie[] = [];
+  private sumPrice: number = 0;
 
   constructor() { }
 
@@ -17,12 +18,14 @@ export class ShoppingCartComponent implements OnInit {
 
   public addItem(item: Movie) {
     this.items.push(item);
+    this.sumPrice += item.price;
   }
 
   public removeItem(item: Movie) {
     const index: number = this.items.indexOf(item);
     if (index !== -1) {
         this.items.splice(index, 1);
+        this.sumPrice -= item.price;
     } 
   }
 

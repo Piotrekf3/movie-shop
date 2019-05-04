@@ -1,7 +1,10 @@
-<h2>Shopping Cart</h2>
-<ol class="items">
-  <li *ngFor="let item of items" >
-     {{item.title}} {{item.price}}PLN
-     <mat-icon id="remove-item" (click)="removeItem(item)">clear</mat-icon>
-  </li>
-</ol>
+<div *ngIf="items.length" class="container">
+  <h2>Shopping Cart</h2>
+  <ol class="items">
+    <li *ngFor="let item of items" >
+      {{item.title}} {{item.price}}PLN
+      <mat-icon id="remove-item" (click)="removeItem(item)">clear</mat-icon>
+    </li>
+  </ol>
+  Sum: {{sumPrice}}PLN
+</div>

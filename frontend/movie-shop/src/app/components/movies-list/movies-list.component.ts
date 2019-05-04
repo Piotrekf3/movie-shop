@@ -12,7 +12,7 @@ export class MoviesListComponent implements OnInit {
 
   @Input() shoppingCart: ShoppingCartComponent;
 
-  moviesList: Movie[];
+  private moviesList: Movie[];
 
   constructor(private movieService: MovieService) { }
 
