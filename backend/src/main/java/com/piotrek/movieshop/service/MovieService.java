@@ -20,6 +20,11 @@ public class MovieService {
     }
 
     @Transactional
+    public Collection<Movie> getMovies(String category) {
+        return movieDAO.getAll(category);
+    }
+
+    @Transactional
     public Movie getMovie(int id) {
         return movieDAO.get(id);
     }

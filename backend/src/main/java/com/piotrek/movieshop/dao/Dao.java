@@ -8,4 +8,6 @@ public interface Dao<T> {
 
     Collection<T> getAll();
 
+    Collection<T> getAll(String criteria);
+
 }
