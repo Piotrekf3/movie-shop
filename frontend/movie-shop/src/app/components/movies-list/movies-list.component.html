@@ -1,11 +1,19 @@
 <h2>Movies</h2>
-<ul class="movies">
-  <li *ngFor="let movie of moviesList" >
-      <span class="badge ">{{movie.id}}</span> 
-      <span class="content">{{movie.title}}</span> 
-      <span class="buy">
+<select class='categories'>
+  <option value='ANY' selected>
+    ANY
+  </option>
+  <option *ngFor='let category of categories' value='category'>
+    {{category}}
+  </option>
+</select>
+<ul class='movies'>
+  <li *ngFor='let movie of moviesList' >
+      <span class='badge '>{{movie.id}}</span> 
+      <span class='content'>{{movie.title}}</span> 
+      <span class='buy'>
         {{movie.price}}PLN
-        <mat-icon id="add-movie" (click)="addToCart(movie)">shopping_cart</mat-icon>
+        <mat-icon id='add-movie' (click)='addToCart(movie)'>shopping_cart</mat-icon>
       </span>
       
   </li>
