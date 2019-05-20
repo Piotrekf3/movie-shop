@@ -8,13 +8,18 @@
   </option>
 </select>
 <ul class='movies'>
-  <li *ngFor='let movie of moviesList' >
+  <li *ngFor='let movie of moviesList' (click)=selectMovie(movie) [class.selected]="movie === selectedMovie">
       <span class='badge '>{{movie.id}}</span> 
       <span class='content'>{{movie.title}}</span> 
       <span class='buy'>
         {{movie.price}}PLN
         <mat-icon id='add-movie' (click)='addToCart(movie)'>shopping_cart</mat-icon>
       </span>
+      <hr *ngIf='movie === selectedMovie'/>
+      <div class="details" *ngIf='movie === selectedMovie'>
+        <div>( {{movie.year}} ) {{movie.category}} director: {{movie.director}} cast: {{movie.cast}}</div>
+        <div>{{movie.story}}</div>
+      </div>
       
   </li>
 </ul>

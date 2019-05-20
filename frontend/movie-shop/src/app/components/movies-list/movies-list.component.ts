@@ -18,6 +18,8 @@ export class MoviesListComponent implements OnInit {
     'SCI-FI',
   ];
 
+  private selectedMovie: Movie;
+
   @Input() shoppingCart: ShoppingCartComponent;
 
   private moviesList: Movie[];
@@ -38,6 +40,14 @@ export class MoviesListComponent implements OnInit {
     this.movieService.getMovies(category).subscribe(movies => {
       this.moviesList = movies;
     });
+  }
+
+  public selectMovie(movie: Movie) {
+    if(this.selectedMovie === movie) {
+      this.selectedMovie = null;
+    } else {
+      this.selectedMovie = movie;
+    }
   }
 
 }

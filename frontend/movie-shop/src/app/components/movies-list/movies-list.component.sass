@@ -1,13 +1,13 @@
 /* moviesComponent's private CSS styles */
 .selected 
   background-color: #CFD8DC !important
-  color: white
+  color: #607D8B
 
 .movies 
   margin: 0 0 2em 0
   list-style-type: none
   padding: 0
-  width: 38em
+  width: 45em
   li 
     cursor: pointer
     position: relative
@@ -15,11 +15,12 @@
     background-color: #EEE
     margin: .5em
     padding: .3em 0
-    height: 1.6em
+    height: auto
     border-radius: 4px
     display: flex
     align-items: center
-    flex-wrap: nowrap !important
+    // flex-wrap: nowrap !important
+    flex-flow: wrap
     justify-content: space-between
     .selected:hover 
       background-color: #BBD8DC !important
@@ -27,9 +28,14 @@
     .buy
       display: flex
       align-items: center
+    hr 
+      width: 100%
   .text 
     position: relative
     top: 0px
+  .details
+    width: 100%
+    text-align: center
 
 .movies li:hover 
   color: #607D8B
@@ -45,6 +51,6 @@
   background-color: #607D8B
   position: relative
   left: -1px
-  height: 1.8em
+  height: auto
   margin-right: .8em
   border-radius: 4px 0 0 4px
