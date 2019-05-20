@@ -1,8 +1,8 @@
 package com.piotrek.movieshop.entity;
 
 public class Currency {
-    private float plnToEur = 4.28f;
-    private float eurToPln = 0.23f;
+    private float plnToEur = 0.23f;
+    private float eurToPln = 4.28f;
 
     public float getPlnToEur() {
         return plnToEur;

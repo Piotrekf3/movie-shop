@@ -6,5 +6,5 @@
       <mat-icon id="remove-item" (click)="removeItem(item)">clear</mat-icon>
     </li>
   </ol>
-  Sum: {{sumPrice}}PLN
+  Sum: {{sumPricePln | number : '1.2'}}PLN {{sumPriceEur |number : '1.2'}}EUR
 </div>
