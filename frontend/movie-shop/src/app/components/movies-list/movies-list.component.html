@@ -1,9 +1,9 @@
 <h2>Movies</h2>
-<select class='categories'>
-  <option value='ANY' selected>
+<select class='categories' (change)='filterMovies($event.target.value)'>
+  <option selected>
     ANY
   </option>
-  <option *ngFor='let category of categories' value='category'>
+  <option *ngFor='let category of categories'>
     {{category}}
   </option>
 </select>

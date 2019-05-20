@@ -34,4 +34,10 @@ export class MoviesListComponent implements OnInit {
     this.shoppingCart.addItem(movie);
   }
 
+  public filterMovies(category) {
+    this.movieService.getMovies(category).subscribe(movies => {
+      this.moviesList = movies;
+    });
+  }
+
 }
