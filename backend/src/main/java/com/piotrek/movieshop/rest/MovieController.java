@@ -16,8 +16,13 @@ public class MovieController {
     private MovieService movieService;
 
     @GetMapping("/movies")
-    public Collection<Movie> movies() {
-        return movieService.getMovies();
+    public Collection<Movie> movies(@RequestParam(value="category", required = false) String category) {
+
+        if(category != null) {
+            return movieService.getMovies(category);
+        } else {
+            return movieService.getMovies();
+        }
     }
 
     @GetMapping("/movies/{id}")

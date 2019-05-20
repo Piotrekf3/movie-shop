@@ -13,6 +13,8 @@ import java.util.List;
 @Repository
 public class MovieDao implements Dao<Movie> {
 
+
+
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -34,7 +36,20 @@ public class MovieDao implements Dao<Movie> {
 
         Query<Movie> query = currentSession.createQuery("from Movie", Movie.class);
 
-        List<Movie> movies =query.getResultList();
+        List<Movie> movies = query.getResultList();
+
+        return movies;
+
+    }
+
+    public Collection<Movie> getAll(String category) {
+        Session currentSession = sessionFactory.getCurrentSession();
+
+        Query<Movie> query = currentSession.createQuery("from Movie where category = :category", Movie.class);
+
+        query.setParameter("category", category);
+
+        List<Movie> movies = query.getResultList();
 
         return movies;
 

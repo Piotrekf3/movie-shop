@@ -10,6 +10,14 @@ import { ShoppingCartComponent } from '../shopping-cart/shopping-cart.component'
 })
 export class MoviesListComponent implements OnInit {
 
+  private categories: string[] = [
+    'DRAMA',
+    'ACTION',
+    'COMEDY',
+    'FAMILY',
+    'SCI-FI',
+  ];
+
   @Input() shoppingCart: ShoppingCartComponent;
 
   private moviesList: Movie[];
